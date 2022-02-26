@@ -6,8 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../Data/item.dart';
-import '../../../Utils/utils.dart';
+import '../../Data/item.dart';
+import '../../Utils/utils.dart';
 
 class Payment extends StatelessWidget {
   final Item item;

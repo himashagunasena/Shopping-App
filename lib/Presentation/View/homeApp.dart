@@ -38,8 +38,18 @@ class Home extends StatelessWidget {
                             top: DefaultPadding * 3, left: DefaultPadding),
                         child: IconButton(
                           icon: const Icon(
-                              Icons.add_shopping_cart,color:TextLightColor,size: 28,),
-                          onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context)=>new Cart( dao: dao,)));},
+                            Icons.add_shopping_cart,
+                            color: TextLightColor,
+                            size: 28,
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => new Cart(
+                                          dao: dao,
+                                        )));
+                          },
                         ),
                       ),
                     ]),
@@ -54,7 +64,8 @@ class Home extends StatelessWidget {
                       ),
                       textAlign: TextAlign.left,
                     )),
-               BodyofItem(dao),],
+                BodyofItem(dao),
+              ],
             )));
   }
 }

@@ -8,11 +8,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../Data/database/database.dart';
 import 'Product.dart';
 
-Future<void> main() async{WidgetsFlutterBinding.ensureInitialized();
-final database = await $FloorAppDatabase.databaseBuilder("shopping_cart.db")
-    .build();
-final dao = database.cartDao;
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final database =
+      await $FloorAppDatabase.databaseBuilder("shopping_cart.db").build();
+  final dao = database.cartDao;
 }
+
 class BodyofItem extends StatelessWidget {
   final CartDao dao;
   BodyofItem(this.dao);
@@ -33,8 +35,10 @@ class BodyofItem extends StatelessWidget {
                       press: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  Product(item: items[index], dao: dao,))),
+                              builder: (context) => Product(
+                                    item: items[index],
+                                    dao: dao,
+                                  ))),
                     ))));
   }
 }

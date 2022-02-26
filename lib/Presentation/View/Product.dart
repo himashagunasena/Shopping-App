@@ -11,12 +11,10 @@ import '../../Data/item.dart';
 import '../../Utils/utils.dart';
 import 'cart.dart';
 
-
 class Product extends StatelessWidget {
   late Item item;
   final CartDao dao;
   Product({Key? key, required this.item, required this.dao}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +39,14 @@ class Product extends StatelessWidget {
         )),
         actions: [
           IconButton(
-              onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context)=>new Cart(dao: dao,)));},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => new Cart(
+                              dao: dao,
+                            )));
+              },
               icon: const Icon(
                 Icons.add_shopping_cart,
                 color: Colors.black,
@@ -54,27 +59,37 @@ class Product extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-
               child: Image.asset(
-                item.imagev,fit: BoxFit.contain,
-                width: size.width,
-              )),
+            item.imagev,
+            fit: BoxFit.contain,
+            width: size.width,
+          )),
           Container(
-              padding: const EdgeInsets.only(left: DefaultPadding,top: DefaultPadding),
+              padding: const EdgeInsets.only(
+                  left: DefaultPadding, top: DefaultPadding),
               child: Text(
                 "Rs." + "${item.price}" + ".00",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               )),
           Container(
-              padding: const EdgeInsets.only(top:DefaultPadding,left: DefaultPadding,right: DefaultPadding),
+              padding: const EdgeInsets.only(
+                  top: DefaultPadding,
+                  left: DefaultPadding,
+                  right: DefaultPadding),
               child: Text(
                 item.description,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
               )),
-
-          Padding(padding: EdgeInsets.only(top: DefaultPadding,left: DefaultPadding),child:CounterBtn(item: item,)),
-          BottomBtn(dao: dao, item:item,),
-
+          Padding(
+              padding:
+                  EdgeInsets.only(top: DefaultPadding, left: DefaultPadding),
+              child: CounterBtn(
+                item: item,
+              )),
+          BottomBtn(
+            dao: dao,
+            item: item,
+          ),
         ],
       ),
     );

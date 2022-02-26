@@ -17,9 +17,8 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
-
   Widget build(BuildContext context) {
-bool _istrue= true;
+    bool _istrue = true;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -44,12 +43,11 @@ bool _istrue= true;
           var product = snapshot.data as List<CartItem>;
           return Column(
             children: [
-
               Expanded(
                 child: ListView.builder(
                   itemCount: items.length,
                   itemBuilder: (context, index) {
-                    if(items[index].selectqty==0){ }
+                    if (items[index].selectqty == 0) {}
                     return Card(
                       elevation: 0,
                       color: Colors.white,
@@ -60,15 +58,14 @@ bool _istrue= true;
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image.asset(items[index].image),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                          child:Column(
-
-                            children: [
-
+                          Align(
+                              alignment: Alignment.centerLeft,
+                              child: Column(
+                                children: [
                                   Container(
-                                      margin:
-                                          EdgeInsets.only(left: DefaultPadding,top: DefaultPadding),
+                                      margin: EdgeInsets.only(
+                                          left: DefaultPadding,
+                                          top: DefaultPadding),
                                       child: Text(
                                         items[index].title,
                                         style: TextStyle(
@@ -77,32 +74,37 @@ bool _istrue= true;
                                             fontWeight: FontWeight.w500),
                                         textAlign: TextAlign.left,
                                       )),
-                              Container(
-                                  margin:
-                                  EdgeInsets.only(top: DefaultPadding/2,left: DefaultPadding),
-                                  child: Text(
-                                    "Rs ${items[index].price} .00",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w300),
-                                  )),
-                        Container(
-                          margin:
-                          EdgeInsets.only(top: DefaultPadding/2,left: DefaultPadding),
-                          child: Text("${items[index].selectqty}"))
-                            ],
-                          )),
-                          Container( margin:
-                          EdgeInsets.only(left: DefaultPadding*2),child: IconButton(icon:Icon(Icons.delete), onPressed: () async{
-                            if (item!=0){
-
-                            setState(() {
-
-    }
-                            );};},),)
+                                  Container(
+                                      margin: EdgeInsets.only(
+                                          top: DefaultPadding / 2,
+                                          left: DefaultPadding),
+                                      child: Text(
+                                        "Rs ${items[index].price} .00",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w300),
+                                      )),
+                                  Container(
+                                      margin: EdgeInsets.only(
+                                          top: DefaultPadding / 2,
+                                          left: DefaultPadding),
+                                      child: Text("${items[index].selectqty}"))
+                                ],
+                              )),
+                          Container(
+                            margin: EdgeInsets.only(left: DefaultPadding * 2),
+                            child: IconButton(
+                              icon: Icon(Icons.delete),
+                              onPressed: () async {
+                                if (item != 0) {
+                                  setState(() {});
+                                }
+                                ;
+                              },
+                            ),
+                          )
                         ],
-
                       ),
                     );
                   },

@@ -15,20 +15,18 @@ class CounterBtnState extends State<CounterBtn> {
   void add() {
     setState(() {
       widget.item.selectqty++;
-
     });
   }
 
   void minus() {
     setState(() {
-      if ( widget.item.selectqty != 0)  widget.item.selectqty--;
-
+      if (widget.item.selectqty != 0) widget.item.selectqty--;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    if (widget.item.selectqty> widget.item.qty && sold == false) {
+    if (widget.item.selectqty > widget.item.qty && sold == false) {
       sold = true;
     }
 
@@ -75,8 +73,8 @@ class Sold extends StatelessWidget {
     return Container(
         padding: const EdgeInsets.only(left: DefaultPadding),
         child: Text(
-      "Sold Out",
-      style: TextStyle(color: Colors.red),
-    ));
+          "Sold Out",
+          style: TextStyle(color: Colors.red),
+        ));
   }
 }

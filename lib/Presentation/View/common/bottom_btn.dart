@@ -68,7 +68,10 @@ class BottomBtn extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Buy( item: item,)),
+                    MaterialPageRoute(
+                        builder: (context) => Buy(
+                              item: item,
+                            )),
                   );
                 },
                 child: Padding(
